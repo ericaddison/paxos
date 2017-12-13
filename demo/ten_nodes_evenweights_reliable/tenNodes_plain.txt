@@ -1,0 +1,1 @@
+../../inputs/tenNodes_plain.txt

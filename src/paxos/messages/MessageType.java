@@ -1,0 +1,13 @@
+package paxos.messages;
+
+public enum MessageType {
+	PREPARE_REQUEST,
+	PREPARE_RESPONSE,
+	ACCEPT_REQUEST,
+	ACCEPT_NOTIFICATION,
+	CHOSEN_VALUE,
+	NACK,
+	NACK_OLDROUND,
+	INIT,
+	APP
+}

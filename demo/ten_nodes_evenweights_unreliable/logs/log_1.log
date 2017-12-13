@@ -1,0 +1,962 @@
+INFO ::: paxos.application.AbstractApp <init> ::: Created new PretendApp with: 
+INFO ::: paxos.application.AbstractApp <init> ::: 	id = 1 
+INFO ::: paxos.network.NetworkNode <init> ::: Created new NetworkNode with: 
+INFO ::: paxos.network.NetworkNode <init> ::: 	id = 1 
+INFO ::: paxos.network.NetworkNode <init> ::: 	nodeListFileName = tenNodes_unreliable_evenweights.txt 
+INFO ::: paxos.network.NetworkNode <init> ::: 	resart = false 
+INFO ::: paxos.network.NetworkNode <init> ::: 	avgMsgDelay = 0 
+INFO ::: paxos.network.NetworkNode <init> ::: 	unreliability = 0.0 
+INFO ::: paxos.network.NetworkNode <init> ::: Node List: 
+INFO ::: paxos.network.NetworkNode <init> ::: 	/127.0.0.1:5000 
+INFO ::: paxos.network.NetworkNode <init> ::: 	/127.0.0.1:5005 
+INFO ::: paxos.network.NetworkNode <init> ::: 	/127.0.0.1:5010 
+INFO ::: paxos.network.NetworkNode <init> ::: 	/127.0.0.1:5015 
+INFO ::: paxos.network.NetworkNode <init> ::: 	/127.0.0.1:5020 
+INFO ::: paxos.network.NetworkNode <init> ::: 	/127.0.0.1:5025 
+INFO ::: paxos.network.NetworkNode <init> ::: 	/127.0.0.1:5030 
+INFO ::: paxos.network.NetworkNode <init> ::: 	/127.0.0.1:5035 
+INFO ::: paxos.network.NetworkNode <init> ::: 	/127.0.0.1:5040 
+INFO ::: paxos.network.NetworkNode <init> ::: 	/127.0.0.1:5045 
+INFO ::: paxos.paxos.PaxosNode <init> ::: Created new PaxosNode with: 
+INFO ::: paxos.paxos.PaxosNode <init> ::: 	id = 1 
+INFO ::: paxos.paxos.PaxosNode <init> ::: 	weight = 0.1 
+INFO ::: paxos.paxos.PaxosNode <init> ::: 	Distinguished Proposer = false 
+INFO ::: paxos.paxos.PaxosNode <init> ::: 	Distinguished Learner = true 
+FINE ::: paxos.application.AbstractApp run ::: Running netnode 
+INFO ::: paxos.network.NetworkNode startConnectionThread ::: Initiating connections 
+FINER ::: paxos.network.NetworkNode connectionLoop ::: Listenining for connection on port 5005 
+FINE ::: paxos.network.NetworkNode connectToOtherServers ::: Entering connect loop for iServer = 0 
+FINER ::: paxos.network.NetworkNode initOutgoingConnection ::: Initializing outgoing connection with node at /127.0.0.1:5000 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"INIT","value":"id","number":1,"id":1}" to /127.0.0.1:5000 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"INIT","value":"ACK","number":0,"id":0}" from /127.0.0.1:5000 
+FINE ::: paxos.network.NetworkNode connectToOtherServers ::: Finished in ctor connection loop 
+FINE ::: paxos.application.AbstractApp run ::: Running paxnode 
+INFO ::: paxos.paxos.PaxosNode run ::: Starting run phase 
+FINE ::: paxos.application.AbstractApp run ::: Starting Listener loops 
+FINEST ::: paxos.application.AbstractApp startListenerLoops ::: Starting App listener thread 0 
+FINEST ::: paxos.application.AbstractApp startListenerLoops ::: Starting App listener thread 1 
+FINER ::: paxos.application.AbstractApp listenerLoop ::: Entering listener loop for node 0 
+FINEST ::: paxos.application.AbstractApp startListenerLoops ::: Starting App listener thread 2 
+FINER ::: paxos.application.AbstractApp listenerLoop ::: Entering listener loop for node 1 
+FINER ::: paxos.application.AbstractApp listenerLoop ::: Listener loop connected for node 1 
+FINER ::: paxos.application.AbstractApp listenerLoop ::: Listener loop connected for node 0 
+FINER ::: paxos.application.AbstractApp listenerLoop ::: Entering listener loop for node 2 
+FINEST ::: paxos.application.AbstractApp startListenerLoops ::: Starting App listener thread 3 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 2 not connected after 1 attempts! 
+FINEST ::: paxos.application.AbstractApp startListenerLoops ::: Starting App listener thread 4 
+FINEST ::: paxos.application.AbstractApp startListenerLoops ::: Starting App listener thread 5 
+FINER ::: paxos.application.AbstractApp listenerLoop ::: Entering listener loop for node 4 
+FINEST ::: paxos.application.AbstractApp startListenerLoops ::: Starting App listener thread 6 
+FINER ::: paxos.application.AbstractApp listenerLoop ::: Entering listener loop for node 3 
+FINER ::: paxos.application.AbstractApp listenerLoop ::: Entering listener loop for node 6 
+FINEST ::: paxos.application.AbstractApp startListenerLoops ::: Starting App listener thread 7 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 4 not connected after 1 attempts! 
+FINER ::: paxos.application.AbstractApp listenerLoop ::: Entering listener loop for node 5 
+FINER ::: paxos.application.AbstractApp listenerLoop ::: Entering listener loop for node 7 
+FINEST ::: paxos.application.AbstractApp startListenerLoops ::: Starting App listener thread 8 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 6 not connected after 1 attempts! 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 3 not connected after 1 attempts! 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 7 not connected after 1 attempts! 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 5 not connected after 1 attempts! 
+FINEST ::: paxos.application.AbstractApp startListenerLoops ::: Starting App listener thread 9 
+FINER ::: paxos.application.AbstractApp listenerLoop ::: Entering listener loop for node 8 
+FINE ::: paxos.application.AbstractApp run ::: Running run_app 
+FINER ::: paxos.application.AbstractApp listenerLoop ::: Entering listener loop for node 9 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 8 not connected after 1 attempts! 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 9 not connected after 1 attempts! 
+INFO ::: paxos.application.PretendApp run_app ::: PretendApp run phase 
+FINER ::: paxos.network.NetworkNode initIncomingConnection ::: Initializing incoming connection with node at /127.0.0.1:47402 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"INIT","value":"id","number":2,"id":2}" from /127.0.0.1:47402 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"INIT","value":"ACK","number":0,"id":1}" to /127.0.0.1:47402 
+FINER ::: paxos.network.NetworkNode connectionLoop ::: Listenining for connection on port 5005 
+FINER ::: paxos.application.AbstractApp listenerLoop ::: Listener loop connected for node 2 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 4 not connected after 2 attempts! 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 6 not connected after 2 attempts! 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 5 not connected after 2 attempts! 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 7 not connected after 2 attempts! 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 3 not connected after 2 attempts! 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 8 not connected after 2 attempts! 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 9 not connected after 2 attempts! 
+FINER ::: paxos.network.NetworkNode initIncomingConnection ::: Initializing incoming connection with node at /127.0.0.1:47406 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"INIT","value":"id","number":3,"id":3}" from /127.0.0.1:47406 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"INIT","value":"ACK","number":0,"id":1}" to /127.0.0.1:47406 
+FINER ::: paxos.network.NetworkNode connectionLoop ::: Listenining for connection on port 5005 
+FINER ::: paxos.network.NetworkNode initIncomingConnection ::: Initializing incoming connection with node at /127.0.0.1:47412 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"INIT","value":"id","number":4,"id":4}" from /127.0.0.1:47412 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"INIT","value":"ACK","number":0,"id":1}" to /127.0.0.1:47412 
+FINER ::: paxos.network.NetworkNode connectionLoop ::: Listenining for connection on port 5005 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 5 not connected after 3 attempts! 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 6 not connected after 3 attempts! 
+FINER ::: paxos.application.AbstractApp listenerLoop ::: Listener loop connected for node 3 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 9 not connected after 3 attempts! 
+FINER ::: paxos.application.AbstractApp listenerLoop ::: Listener loop connected for node 4 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 7 not connected after 3 attempts! 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 8 not connected after 3 attempts! 
+FINER ::: paxos.network.NetworkNode initIncomingConnection ::: Initializing incoming connection with node at /127.0.0.1:47420 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"INIT","value":"id","number":5,"id":5}" from /127.0.0.1:47420 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"INIT","value":"ACK","number":0,"id":1}" to /127.0.0.1:47420 
+FINER ::: paxos.network.NetworkNode connectionLoop ::: Listenining for connection on port 5005 
+FINER ::: paxos.network.NetworkNode initIncomingConnection ::: Initializing incoming connection with node at /127.0.0.1:47430 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"INIT","value":"id","number":6,"id":6}" from /127.0.0.1:47430 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"INIT","value":"ACK","number":0,"id":1}" to /127.0.0.1:47430 
+FINER ::: paxos.network.NetworkNode connectionLoop ::: Listenining for connection on port 5005 
+FINER ::: paxos.application.AbstractApp listenerLoop ::: Listener loop connected for node 5 
+FINER ::: paxos.application.AbstractApp listenerLoop ::: Listener loop connected for node 6 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 9 not connected after 4 attempts! 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 8 not connected after 4 attempts! 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Node 7 not connected after 4 attempts! 
+FINER ::: paxos.network.NetworkNode initIncomingConnection ::: Initializing incoming connection with node at /127.0.0.1:47442 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"INIT","value":"id","number":7,"id":7}" from /127.0.0.1:47442 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"INIT","value":"ACK","number":0,"id":1}" to /127.0.0.1:47442 
+FINER ::: paxos.network.NetworkNode connectionLoop ::: Listenining for connection on port 5005 
+FINER ::: paxos.network.NetworkNode initIncomingConnection ::: Initializing incoming connection with node at /127.0.0.1:47456 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"INIT","value":"id","number":8,"id":8}" from /127.0.0.1:47456 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"INIT","value":"ACK","number":0,"id":1}" to /127.0.0.1:47456 
+FINER ::: paxos.network.NetworkNode connectionLoop ::: Listenining for connection on port 5005 
+FINER ::: paxos.network.NetworkNode initIncomingConnection ::: Initializing incoming connection with node at /127.0.0.1:47476 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"INIT","value":"id","number":9,"id":9}" from /127.0.0.1:47476 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"INIT","value":"ACK","number":0,"id":1}" to /127.0.0.1:47476 
+FINER ::: paxos.network.NetworkNode connectionLoop ::: Listenining for connection on port 5005 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"PREPARE_REQUEST","value":"0","number":0,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"PREPARE_REQUEST","value":"0","number":0,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"PREPARE_REQUEST","value":"0","number":0,"id":0} 
+FINEST ::: paxos.paxos.PaxosNode receivePrepareRequest ::: Updared promiseNumber: writing state to file 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"PREPARE_RESPONSE","value":"","number":0,"id":1}" to node 0 
+FINEST ::: paxos.paxos.PaxosNode sendPrepareResponse ::: Elapsed time = 12 
+FINEST ::: paxos.paxos.PaxosNode receivePrepareRequest ::: Elapsed time = 14 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_REQUEST","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_REQUEST","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_REQUEST","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":0} 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":2}" from node 2 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":2} from node 2 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":2} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Accepted new proposal from node 0: {"number":0,"round":0,"value":"MyVal0-0"} 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Updated acceptedProposal: writing state to file 
+FINE ::: paxos.paxos.PaxosNode sendAcceptNotification ::: Preparing to send out {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":1} to DLs 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":1}" to node 0 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":1}" to node 1 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":1}" to node 2 
+FINEST ::: paxos.paxos.PaxosNode sendAcceptNotification ::: Elapsed time = 4 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Elapsed time = 15 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 2 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 2 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":1}" from node 1 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":1} from node 1 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":1} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 1 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":4}" from node 4 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":4} from node 4 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":4} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 4 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":5}" from node 5 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":5} from node 5 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":5} 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 6 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 5 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":3}" from node 3 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":3} from node 3 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":3} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 3 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":6}" from node 6 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":6} from node 6 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":0,\"round\":0,\"value\":\"MyVal0-0\"}","number":0,"id":6} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 6 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-0","number":0,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-0","number":0,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-0","number":0,"id":0} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Chosen value (6) = MyVal0-0 
+INFO ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Determined new chosen value MyVal0-0 for round 0 
+FINE ::: paxos.paxos.PaxosNode sendChosenValue ::: Sending chosen value for round 0 {0=MyVal0-0} to all 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-0","number":0,"id":1}" to node 0 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-0","number":0,"id":1}" to node 1 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-0","number":0,"id":1}" to node 2 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-0","number":0,"id":1}" to node 3 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-0","number":0,"id":1}" to node 4 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-0","number":0,"id":1}" to node 5 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-0","number":0,"id":1}" to node 6 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-0","number":0,"id":1}" to node 7 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-0","number":0,"id":1}" to node 8 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-0","number":0,"id":1}" to node 9 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-0","number":0,"id":1}" from node 1 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-0","number":0,"id":1} from node 1 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-0","number":0,"id":1} 
+FINEST ::: paxos.paxos.PaxosNode sendChosenValue ::: Elapsed time = 13 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated round to 1 : writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 24 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 1 for round 0 : MyVal0-0 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 1 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 0 for round 0 : MyVal0-0 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-0","number":0,"id":2}" from node 2 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-0","number":0,"id":2} from node 2 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-0","number":0,"id":2} 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 2 for round 0 : MyVal0-0 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"PREPARE_REQUEST","value":"1","number":10,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"PREPARE_REQUEST","value":"1","number":10,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"PREPARE_REQUEST","value":"1","number":10,"id":0} 
+FINEST ::: paxos.paxos.PaxosNode receivePrepareRequest ::: Updared promiseNumber: writing state to file 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"PREPARE_RESPONSE","value":"","number":10,"id":1}" to node 0 
+FINEST ::: paxos.paxos.PaxosNode sendPrepareResponse ::: Elapsed time = 0 
+FINEST ::: paxos.paxos.PaxosNode receivePrepareRequest ::: Elapsed time = 1 
+FINER ::: paxos.application.AbstractApp listenerLoop ::: Listener loop connected for node 9 
+FINER ::: paxos.application.AbstractApp listenerLoop ::: Listener loop connected for node 8 
+FINER ::: paxos.application.AbstractApp listenerLoop ::: Listener loop connected for node 7 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_REQUEST","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_REQUEST","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_REQUEST","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":0} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Accepted new proposal from node 0: {"number":10,"round":1,"value":"MyVal0-1"} 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Updated acceptedProposal: writing state to file 
+FINE ::: paxos.paxos.PaxosNode sendAcceptNotification ::: Preparing to send out {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":1} to DLs 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":1}" to node 0 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":1}" to node 1 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":1}" to node 2 
+FINEST ::: paxos.paxos.PaxosNode sendAcceptNotification ::: Elapsed time = 3 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Elapsed time = 5 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":2}" from node 2 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":2} from node 2 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":2} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 2 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":1}" from node 1 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":1} from node 1 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":1} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 1 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":3}" from node 3 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":3} from node 3 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":3} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 3 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":4}" from node 4 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":4} from node 4 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":4} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 4 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":5}" from node 5 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":5} from node 5 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":5} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 5 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":6}" from node 6 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":6} from node 6 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":10,\"round\":1,\"value\":\"MyVal0-1\"}","number":10,"id":6} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 6 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Chosen value (6) = MyVal0-1 
+INFO ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Determined new chosen value MyVal0-1 for round 1 
+FINE ::: paxos.paxos.PaxosNode sendChosenValue ::: Sending chosen value for round 1 {0=MyVal0-0, 1=MyVal0-1} to all 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-1","number":1,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-1","number":1,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-1","number":1,"id":0} 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-1","number":1,"id":1}" to node 0 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-1","number":1,"id":1}" to node 1 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-1","number":1,"id":1}" to node 2 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-1","number":1,"id":2}" from node 2 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-1","number":1,"id":2} from node 2 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-1","number":1,"id":2} 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-1","number":1,"id":1}" to node 3 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-1","number":1,"id":1}" from node 1 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-1","number":1,"id":1} from node 1 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-1","number":1,"id":1} 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-1","number":1,"id":1}" to node 4 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-1","number":1,"id":1}" to node 5 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-1","number":1,"id":1}" to node 6 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-1","number":1,"id":1}" to node 7 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-1","number":1,"id":1}" to node 8 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-1","number":1,"id":1}" to node 9 
+FINEST ::: paxos.paxos.PaxosNode sendChosenValue ::: Elapsed time = 33 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated round to 2 : writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 36 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 1 for round 1 : MyVal0-1 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 2 for round 1 : MyVal0-1 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 0 for round 1 : MyVal0-1 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"PREPARE_REQUEST","value":"2","number":20,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"PREPARE_REQUEST","value":"2","number":20,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"PREPARE_REQUEST","value":"2","number":20,"id":0} 
+FINEST ::: paxos.paxos.PaxosNode receivePrepareRequest ::: Updared promiseNumber: writing state to file 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"PREPARE_RESPONSE","value":"","number":20,"id":1}" to node 0 
+FINEST ::: paxos.paxos.PaxosNode sendPrepareResponse ::: Elapsed time = 0 
+FINEST ::: paxos.paxos.PaxosNode receivePrepareRequest ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_REQUEST","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_REQUEST","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_REQUEST","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":0} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Accepted new proposal from node 0: {"number":20,"round":2,"value":"MyVal0-2"} 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Updated acceptedProposal: writing state to file 
+FINE ::: paxos.paxos.PaxosNode sendAcceptNotification ::: Preparing to send out {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":1} to DLs 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":1}" to node 0 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":1}" to node 1 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":1}" to node 2 
+FINEST ::: paxos.paxos.PaxosNode sendAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":2}" from node 2 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":2} from node 2 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":2} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 2 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":1}" from node 1 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":1} from node 1 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":1} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 1 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":4}" from node 4 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":4} from node 4 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":4} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 4 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":3}" from node 3 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":3} from node 3 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":3} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 3 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":5}" from node 5 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":5} from node 5 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":5} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 5 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":6}" from node 6 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":6} from node 6 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":20,\"round\":2,\"value\":\"MyVal0-2\"}","number":20,"id":6} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 6 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Chosen value (6) = MyVal0-2 
+INFO ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Determined new chosen value MyVal0-2 for round 2 
+FINE ::: paxos.paxos.PaxosNode sendChosenValue ::: Sending chosen value for round 2 {0=MyVal0-0, 1=MyVal0-1, 2=MyVal0-2} to all 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-2","number":2,"id":1}" to node 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-2","number":2,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-2","number":2,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-2","number":2,"id":0} 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-2","number":2,"id":1}" to node 1 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-2","number":2,"id":1}" to node 2 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-2","number":2,"id":2}" from node 2 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-2","number":2,"id":2} from node 2 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-2","number":2,"id":2} 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-2","number":2,"id":1}" from node 1 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-2","number":2,"id":1} from node 1 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-2","number":2,"id":1} 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-2","number":2,"id":1}" to node 3 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-2","number":2,"id":1}" to node 4 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-2","number":2,"id":1}" to node 5 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-2","number":2,"id":1}" to node 6 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-2","number":2,"id":1}" to node 7 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-2","number":2,"id":1}" to node 8 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-2","number":2,"id":1}" to node 9 
+FINEST ::: paxos.paxos.PaxosNode sendChosenValue ::: Elapsed time = 45 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated round to 3 : writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 55 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 1 for round 2 : MyVal0-2 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 1 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 2 for round 2 : MyVal0-2 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 0 for round 2 : MyVal0-2 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"PREPARE_REQUEST","value":"3","number":30,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"PREPARE_REQUEST","value":"3","number":30,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"PREPARE_REQUEST","value":"3","number":30,"id":0} 
+FINEST ::: paxos.paxos.PaxosNode receivePrepareRequest ::: Updared promiseNumber: writing state to file 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"PREPARE_RESPONSE","value":"","number":30,"id":1}" to node 0 
+FINEST ::: paxos.paxos.PaxosNode sendPrepareResponse ::: Elapsed time = 0 
+FINEST ::: paxos.paxos.PaxosNode receivePrepareRequest ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_REQUEST","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_REQUEST","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_REQUEST","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":0} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Accepted new proposal from node 0: {"number":30,"round":3,"value":"MyVal0-3"} 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Updated acceptedProposal: writing state to file 
+FINE ::: paxos.paxos.PaxosNode sendAcceptNotification ::: Preparing to send out {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":1} to DLs 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":1}" to node 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":2}" from node 2 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":2} from node 2 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":2} 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":1}" to node 1 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":1}" to node 2 
+FINEST ::: paxos.paxos.PaxosNode sendAcceptNotification ::: Elapsed time = 5 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Elapsed time = 6 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 2 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 8 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":1}" from node 1 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":1} from node 1 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":1} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 1 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":3}" from node 3 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":3} from node 3 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":3} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 3 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":4}" from node 4 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":4} from node 4 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":4} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 4 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":5}" from node 5 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":5} from node 5 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":5} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 5 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":6}" from node 6 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":6} from node 6 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":30,\"round\":3,\"value\":\"MyVal0-3\"}","number":30,"id":6} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 6 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Chosen value (6) = MyVal0-3 
+INFO ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Determined new chosen value MyVal0-3 for round 3 
+FINE ::: paxos.paxos.PaxosNode sendChosenValue ::: Sending chosen value for round 3 {0=MyVal0-0, 1=MyVal0-1, 2=MyVal0-2, 3=MyVal0-3} to all 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-3","number":3,"id":1}" to node 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-3","number":3,"id":2}" from node 2 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-3","number":3,"id":2} from node 2 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-3","number":3,"id":2} 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-3","number":3,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-3","number":3,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-3","number":3,"id":0} 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-3","number":3,"id":1}" to node 1 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-3","number":3,"id":1}" to node 2 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-3","number":3,"id":1}" to node 3 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-3","number":3,"id":1}" to node 4 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-3","number":3,"id":1}" to node 5 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-3","number":3,"id":1}" to node 6 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-3","number":3,"id":1}" to node 7 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-3","number":3,"id":1}" to node 8 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-3","number":3,"id":1}" to node 9 
+FINEST ::: paxos.paxos.PaxosNode sendChosenValue ::: Elapsed time = 25 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated round to 4 : writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 28 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 0 for round 3 : MyVal0-3 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 2 for round 3 : MyVal0-3 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-3","number":3,"id":1}" from node 1 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-3","number":3,"id":1} from node 1 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-3","number":3,"id":1} 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 1 for round 3 : MyVal0-3 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"PREPARE_REQUEST","value":"4","number":40,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"PREPARE_REQUEST","value":"4","number":40,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"PREPARE_REQUEST","value":"4","number":40,"id":0} 
+FINEST ::: paxos.paxos.PaxosNode receivePrepareRequest ::: Updared promiseNumber: writing state to file 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"PREPARE_RESPONSE","value":"","number":40,"id":1}" to node 0 
+FINEST ::: paxos.paxos.PaxosNode sendPrepareResponse ::: Elapsed time = 0 
+FINEST ::: paxos.paxos.PaxosNode receivePrepareRequest ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_REQUEST","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_REQUEST","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_REQUEST","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":0} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Accepted new proposal from node 0: {"number":40,"round":4,"value":"MyVal0-4"} 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Updated acceptedProposal: writing state to file 
+FINE ::: paxos.paxos.PaxosNode sendAcceptNotification ::: Preparing to send out {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":1} to DLs 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":1}" to node 0 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":1}" to node 1 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":1}" to node 2 
+FINEST ::: paxos.paxos.PaxosNode sendAcceptNotification ::: Elapsed time = 0 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":2}" from node 2 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":2} from node 2 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":2} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 2 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":1}" from node 1 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":1} from node 1 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":1} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 1 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":5}" from node 5 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":5} from node 5 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":5} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 5 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":3}" from node 3 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":3} from node 3 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":3} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 3 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":4}" from node 4 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":4} from node 4 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":4} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 4 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 3 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":6}" from node 6 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":6} from node 6 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":40,\"round\":4,\"value\":\"MyVal0-4\"}","number":40,"id":6} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 6 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Chosen value (6) = MyVal0-4 
+INFO ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Determined new chosen value MyVal0-4 for round 4 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-4","number":4,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-4","number":4,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-4","number":4,"id":0} 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-4","number":4,"id":2}" from node 2 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-4","number":4,"id":2} from node 2 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-4","number":4,"id":2} 
+FINE ::: paxos.paxos.PaxosNode sendChosenValue ::: Sending chosen value for round 4 {0=MyVal0-0, 1=MyVal0-1, 2=MyVal0-2, 3=MyVal0-3, 4=MyVal0-4} to all 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-4","number":4,"id":1}" to node 0 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-4","number":4,"id":1}" to node 1 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-4","number":4,"id":1}" to node 2 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-4","number":4,"id":1}" to node 3 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-4","number":4,"id":1}" to node 4 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-4","number":4,"id":1}" to node 5 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-4","number":4,"id":1}" to node 6 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-4","number":4,"id":1}" to node 7 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-4","number":4,"id":1}" to node 8 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-4","number":4,"id":1}" to node 9 
+FINEST ::: paxos.paxos.PaxosNode sendChosenValue ::: Elapsed time = 7 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated round to 5 : writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 21 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 2 for round 4 : MyVal0-4 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 0 for round 4 : MyVal0-4 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-4","number":4,"id":1}" from node 1 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-4","number":4,"id":1} from node 1 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-4","number":4,"id":1} 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 1 for round 4 : MyVal0-4 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"PREPARE_REQUEST","value":"5","number":50,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"PREPARE_REQUEST","value":"5","number":50,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"PREPARE_REQUEST","value":"5","number":50,"id":0} 
+FINEST ::: paxos.paxos.PaxosNode receivePrepareRequest ::: Updared promiseNumber: writing state to file 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"PREPARE_RESPONSE","value":"","number":50,"id":1}" to node 0 
+FINEST ::: paxos.paxos.PaxosNode sendPrepareResponse ::: Elapsed time = 0 
+FINEST ::: paxos.paxos.PaxosNode receivePrepareRequest ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_REQUEST","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_REQUEST","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_REQUEST","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":0} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Accepted new proposal from node 0: {"number":50,"round":5,"value":"MyVal0-5"} 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Updated acceptedProposal: writing state to file 
+FINE ::: paxos.paxos.PaxosNode sendAcceptNotification ::: Preparing to send out {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":1} to DLs 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":2}" from node 2 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":2} from node 2 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":2} 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":1}" to node 0 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":1}" to node 1 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":1}" to node 2 
+FINEST ::: paxos.paxos.PaxosNode sendAcceptNotification ::: Elapsed time = 7 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Elapsed time = 8 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 2 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":1}" from node 1 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":1} from node 1 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":1} 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":4}" from node 4 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 1 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":4} from node 4 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":4} 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":3}" from node 3 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":3} from node 3 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":3} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 3 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":5}" from node 5 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":5} from node 5 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":5} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 5 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 4 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":6}" from node 6 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":6} from node 6 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":50,\"round\":5,\"value\":\"MyVal0-5\"}","number":50,"id":6} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 6 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Chosen value (6) = MyVal0-5 
+INFO ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Determined new chosen value MyVal0-5 for round 5 
+FINE ::: paxos.paxos.PaxosNode sendChosenValue ::: Sending chosen value for round 5 {0=MyVal0-0, 1=MyVal0-1, 2=MyVal0-2, 3=MyVal0-3, 4=MyVal0-4, 5=MyVal0-5} to all 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-5","number":5,"id":1}" to node 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-5","number":5,"id":2}" from node 2 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-5","number":5,"id":2} from node 2 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-5","number":5,"id":2} 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-5","number":5,"id":1}" to node 1 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-5","number":5,"id":1}" to node 2 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-5","number":5,"id":1}" to node 3 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-5","number":5,"id":1}" to node 4 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-5","number":5,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-5","number":5,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-5","number":5,"id":0} 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-5","number":5,"id":1}" to node 5 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-5","number":5,"id":1}" from node 1 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-5","number":5,"id":1} from node 1 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-5","number":5,"id":1} 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-5","number":5,"id":1}" to node 6 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-5","number":5,"id":1}" to node 7 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-5","number":5,"id":1}" to node 8 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-5","number":5,"id":1}" to node 9 
+FINEST ::: paxos.paxos.PaxosNode sendChosenValue ::: Elapsed time = 28 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated round to 6 : writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 31 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 1 for round 5 : MyVal0-5 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 0 for round 5 : MyVal0-5 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 2 for round 5 : MyVal0-5 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"PREPARE_REQUEST","value":"6","number":60,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"PREPARE_REQUEST","value":"6","number":60,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"PREPARE_REQUEST","value":"6","number":60,"id":0} 
+FINEST ::: paxos.paxos.PaxosNode receivePrepareRequest ::: Updared promiseNumber: writing state to file 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"PREPARE_RESPONSE","value":"","number":60,"id":1}" to node 0 
+FINEST ::: paxos.paxos.PaxosNode sendPrepareResponse ::: Elapsed time = 0 
+FINEST ::: paxos.paxos.PaxosNode receivePrepareRequest ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_REQUEST","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_REQUEST","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_REQUEST","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":0} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Accepted new proposal from node 0: {"number":60,"round":6,"value":"MyVal0-6"} 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Updated acceptedProposal: writing state to file 
+FINE ::: paxos.paxos.PaxosNode sendAcceptNotification ::: Preparing to send out {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":1} to DLs 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":1}" to node 0 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":1}" to node 1 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":1}" to node 2 
+FINEST ::: paxos.paxos.PaxosNode sendAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Elapsed time = 2 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":2}" from node 2 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":2} from node 2 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":2} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 2 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":1}" from node 1 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":1} from node 1 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":1} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 1 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":3}" from node 3 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":3} from node 3 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":3} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 3 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":4}" from node 4 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":4} from node 4 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":4} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 4 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":5}" from node 5 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":5} from node 5 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":5} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 5 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":6}" from node 6 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":6} from node 6 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":60,\"round\":6,\"value\":\"MyVal0-6\"}","number":60,"id":6} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 6 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Chosen value (6) = MyVal0-6 
+INFO ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Determined new chosen value MyVal0-6 for round 6 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-6","number":6,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-6","number":6,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-6","number":6,"id":0} 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-6","number":6,"id":2}" from node 2 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-6","number":6,"id":2} from node 2 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-6","number":6,"id":2} 
+FINE ::: paxos.paxos.PaxosNode sendChosenValue ::: Sending chosen value for round 6 {0=MyVal0-0, 1=MyVal0-1, 2=MyVal0-2, 3=MyVal0-3, 4=MyVal0-4, 5=MyVal0-5, 6=MyVal0-6} to all 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-6","number":6,"id":1}" to node 0 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-6","number":6,"id":1}" to node 1 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-6","number":6,"id":1}" to node 2 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-6","number":6,"id":1}" to node 3 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-6","number":6,"id":1}" to node 4 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-6","number":6,"id":1}" to node 5 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-6","number":6,"id":1}" to node 6 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-6","number":6,"id":1}" to node 7 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-6","number":6,"id":1}" from node 1 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-6","number":6,"id":1} from node 1 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-6","number":6,"id":1} 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-6","number":6,"id":1}" to node 8 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-6","number":6,"id":1}" to node 9 
+FINEST ::: paxos.paxos.PaxosNode sendChosenValue ::: Elapsed time = 9 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated round to 7 : writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 30 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 1 for round 6 : MyVal0-6 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 2 for round 6 : MyVal0-6 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 0 for round 6 : MyVal0-6 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"PREPARE_REQUEST","value":"7","number":70,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"PREPARE_REQUEST","value":"7","number":70,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"PREPARE_REQUEST","value":"7","number":70,"id":0} 
+FINEST ::: paxos.paxos.PaxosNode receivePrepareRequest ::: Updared promiseNumber: writing state to file 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"PREPARE_RESPONSE","value":"","number":70,"id":1}" to node 0 
+FINEST ::: paxos.paxos.PaxosNode sendPrepareResponse ::: Elapsed time = 0 
+FINEST ::: paxos.paxos.PaxosNode receivePrepareRequest ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_REQUEST","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_REQUEST","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_REQUEST","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":0} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Accepted new proposal from node 0: {"number":70,"round":7,"value":"MyVal0-7"} 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Updated acceptedProposal: writing state to file 
+FINE ::: paxos.paxos.PaxosNode sendAcceptNotification ::: Preparing to send out {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":1} to DLs 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":1}" to node 0 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":1}" to node 1 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":1}" to node 2 
+FINEST ::: paxos.paxos.PaxosNode sendAcceptNotification ::: Elapsed time = 0 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":2}" from node 2 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":2} from node 2 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":2} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 2 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":1}" from node 1 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":1} from node 1 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":1} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 1 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":5}" from node 5 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":5} from node 5 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":5} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 5 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 2 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":3}" from node 3 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":3} from node 3 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":3} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 3 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":4}" from node 4 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":4} from node 4 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":4} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 4 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":6}" from node 6 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":6} from node 6 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":70,\"round\":7,\"value\":\"MyVal0-7\"}","number":70,"id":6} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 6 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Chosen value (6) = MyVal0-7 
+INFO ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Determined new chosen value MyVal0-7 for round 7 
+FINE ::: paxos.paxos.PaxosNode sendChosenValue ::: Sending chosen value for round 7 {0=MyVal0-0, 1=MyVal0-1, 2=MyVal0-2, 3=MyVal0-3, 4=MyVal0-4, 5=MyVal0-5, 6=MyVal0-6, 7=MyVal0-7} to all 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-7","number":7,"id":1}" to node 0 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-7","number":7,"id":1}" to node 1 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-7","number":7,"id":1}" to node 2 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-7","number":7,"id":1}" to node 3 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-7","number":7,"id":2}" from node 2 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-7","number":7,"id":2} from node 2 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-7","number":7,"id":2} 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-7","number":7,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-7","number":7,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-7","number":7,"id":0} 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-7","number":7,"id":1}" from node 1 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-7","number":7,"id":1} from node 1 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-7","number":7,"id":1} 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-7","number":7,"id":1}" to node 4 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-7","number":7,"id":1}" to node 5 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-7","number":7,"id":1}" to node 6 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-7","number":7,"id":1}" to node 7 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-7","number":7,"id":1}" to node 8 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-7","number":7,"id":1}" to node 9 
+FINEST ::: paxos.paxos.PaxosNode sendChosenValue ::: Elapsed time = 25 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated round to 8 : writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 26 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 1 for round 7 : MyVal0-7 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 0 for round 7 : MyVal0-7 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 2 for round 7 : MyVal0-7 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"PREPARE_REQUEST","value":"8","number":80,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"PREPARE_REQUEST","value":"8","number":80,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"PREPARE_REQUEST","value":"8","number":80,"id":0} 
+FINEST ::: paxos.paxos.PaxosNode receivePrepareRequest ::: Updared promiseNumber: writing state to file 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"PREPARE_RESPONSE","value":"","number":80,"id":1}" to node 0 
+FINEST ::: paxos.paxos.PaxosNode sendPrepareResponse ::: Elapsed time = 0 
+FINEST ::: paxos.paxos.PaxosNode receivePrepareRequest ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_REQUEST","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_REQUEST","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_REQUEST","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":0} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Accepted new proposal from node 0: {"number":80,"round":8,"value":"MyVal0-8"} 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Updated acceptedProposal: writing state to file 
+FINE ::: paxos.paxos.PaxosNode sendAcceptNotification ::: Preparing to send out {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":1} to DLs 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":1}" to node 0 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":1}" to node 1 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":1}" to node 2 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":2}" from node 2 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":2} from node 2 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":2} 
+FINEST ::: paxos.paxos.PaxosNode sendAcceptNotification ::: Elapsed time = 4 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Elapsed time = 6 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 2 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":1}" from node 1 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":1} from node 1 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":1} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 1 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":5}" from node 5 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":5} from node 5 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":5} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 5 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":3}" from node 3 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":3} from node 3 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":3} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 3 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":6}" from node 6 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":6} from node 6 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":6} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 6 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":4}" from node 4 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":4} from node 4 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":80,\"round\":8,\"value\":\"MyVal0-8\"}","number":80,"id":4} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 4 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Chosen value (4) = MyVal0-8 
+INFO ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Determined new chosen value MyVal0-8 for round 8 
+FINE ::: paxos.paxos.PaxosNode sendChosenValue ::: Sending chosen value for round 8 {0=MyVal0-0, 1=MyVal0-1, 2=MyVal0-2, 3=MyVal0-3, 4=MyVal0-4, 5=MyVal0-5, 6=MyVal0-6, 7=MyVal0-7, 8=MyVal0-8} to all 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-8","number":8,"id":1}" to node 0 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-8","number":8,"id":1}" to node 1 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-8","number":8,"id":1}" to node 2 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-8","number":8,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-8","number":8,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-8","number":8,"id":0} 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-8","number":8,"id":1}" to node 3 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-8","number":8,"id":2}" from node 2 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-8","number":8,"id":2} from node 2 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-8","number":8,"id":2} 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-8","number":8,"id":1}" to node 4 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-8","number":8,"id":1}" to node 5 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-8","number":8,"id":1}" to node 6 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-8","number":8,"id":1}" from node 1 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-8","number":8,"id":1} from node 1 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-8","number":8,"id":1} 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-8","number":8,"id":1}" to node 7 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-8","number":8,"id":1}" to node 8 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-8","number":8,"id":1}" to node 9 
+FINEST ::: paxos.paxos.PaxosNode sendChosenValue ::: Elapsed time = 21 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated round to 9 : writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 28 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 1 for round 8 : MyVal0-8 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 2 for round 8 : MyVal0-8 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 0 for round 8 : MyVal0-8 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"PREPARE_REQUEST","value":"9","number":90,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"PREPARE_REQUEST","value":"9","number":90,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"PREPARE_REQUEST","value":"9","number":90,"id":0} 
+FINEST ::: paxos.paxos.PaxosNode receivePrepareRequest ::: Updared promiseNumber: writing state to file 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"PREPARE_RESPONSE","value":"","number":90,"id":1}" to node 0 
+FINEST ::: paxos.paxos.PaxosNode sendPrepareResponse ::: Elapsed time = 0 
+FINEST ::: paxos.paxos.PaxosNode receivePrepareRequest ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_REQUEST","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_REQUEST","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_REQUEST","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":0} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Accepted new proposal from node 0: {"number":90,"round":9,"value":"MyVal0-9"} 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Updated acceptedProposal: writing state to file 
+FINE ::: paxos.paxos.PaxosNode sendAcceptNotification ::: Preparing to send out {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":1} to DLs 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":1}" to node 0 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":1}" to node 1 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":1}" to node 2 
+FINEST ::: paxos.paxos.PaxosNode sendAcceptNotification ::: Elapsed time = 0 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptRequest ::: Elapsed time = 2 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":2}" from node 2 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":2} from node 2 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":2} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 2 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":1}" from node 1 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":1} from node 1 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":1} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 1 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":5}" from node 5 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":5} from node 5 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":5} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 5 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":3}" from node 3 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":3} from node 3 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":3} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 3 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":6}" from node 6 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":6} from node 6 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":6} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 6 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 1 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":4}" from node 4 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":4} from node 4 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"ACCEPT_NOTIFICATION","value":"{\"number\":90,\"round\":9,\"value\":\"MyVal0-9\"}","number":90,"id":4} 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Received new accepted proposal from node 4 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated acceptedProposals: writing state to file 
+FINE ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Chosen value (4) = MyVal0-9 
+INFO ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Determined new chosen value MyVal0-9 for round 9 
+FINE ::: paxos.paxos.PaxosNode sendChosenValue ::: Sending chosen value for round 9 {0=MyVal0-0, 1=MyVal0-1, 2=MyVal0-2, 3=MyVal0-3, 4=MyVal0-4, 5=MyVal0-5, 6=MyVal0-6, 7=MyVal0-7, 8=MyVal0-8, 9=MyVal0-9} to all 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-9","number":9,"id":1}" to node 0 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-9","number":9,"id":1}" to node 1 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-9","number":9,"id":1}" to node 2 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-9","number":9,"id":1}" to node 3 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-9","number":9,"id":1}" to node 4 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-9","number":9,"id":1}" to node 5 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-9","number":9,"id":1}" to node 6 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-9","number":9,"id":1}" to node 7 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-9","number":9,"id":1}" to node 8 
+FINEST ::: paxos.network.NetworkNode sendMessage ::: Sending message "{"type":"CHOSEN_VALUE","value":"MyVal0-9","number":9,"id":1}" to node 9 
+FINEST ::: paxos.paxos.PaxosNode sendChosenValue ::: Elapsed time = 1 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Updated round to 10 : writing state to file 
+FINEST ::: paxos.paxos.PaxosNode receiveAcceptNotification ::: Elapsed time = 17 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-9","number":9,"id":1}" from node 1 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-9","number":9,"id":1} from node 1 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-9","number":9,"id":1} 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 1 for round 9 : MyVal0-9 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-9","number":9,"id":0}" from node 0 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-9","number":9,"id":0} from node 0 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-9","number":9,"id":0} 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 0 for round 9 : MyVal0-9 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
+FINEST ::: paxos.network.NetworkNode receiveMessage ::: Received message "{"type":"CHOSEN_VALUE","value":"MyVal0-9","number":9,"id":2}" from node 2 
+FINEST ::: paxos.application.AbstractApp listenerLoop ::: Received string {"type":"CHOSEN_VALUE","value":"MyVal0-9","number":9,"id":2} from node 2 
+FINEST ::: paxos.paxos.PaxosNode processMessage ::: Processing message {"type":"CHOSEN_VALUE","value":"MyVal0-9","number":9,"id":2} 
+FINE ::: paxos.paxos.PaxosNode receiveChosenValue ::: Chosen value confirmed from node 2 for round 9 : MyVal0-9 
+FINEST ::: paxos.paxos.PaxosNode receiveChosenValue ::: Elapsed time = 0 
