@@ -1,0 +1,18 @@
+# Gradle ignores
+.gradle
+/build/
+
+# eclipse ignores
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.classpath
+.project
