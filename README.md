@@ -1,3 +1,12 @@
+## Building Project
+The project is managed with gradle. To build all, run
+```shell
+cd project
+gradle build eclipse
+```
+
+Cleaning can be done with `gradle clean` and/or `gradle cleanEclipse`.
+
 ## Common useful commands
 
 
