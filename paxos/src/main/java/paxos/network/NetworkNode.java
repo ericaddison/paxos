@@ -16,8 +16,9 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 import java.util.Random;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
+
+import org.apache.logging.log4j.Logger;
 
 import paxos.NodeFileParser;
 import paxos.messages.Message;
@@ -153,10 +154,10 @@ public class NetworkNode {
 		*/
 		
 		if(!isConnected(theirId)){
-			log.warning("Error sending message to node " + theirId + ": node not connected");
+			log.warn("Error sending message to node " + theirId + ": node not connected");
 			return false;
 		}
-		log.finest("Sending message \"" + msg + "\" to node " + theirId );
+		log.debug("Sending message \"" + msg + "\" to node " + theirId );
 		
 		if(theirId == id){
 			selfMessages.add(msg);
@@ -190,7 +191,7 @@ public class NetworkNode {
 					e.printStackTrace();
 				}
 			}
-			log.finest("Received message \"" + myMsg + "\" from node " + theirId );
+			log.debug("Received message \"" + myMsg + "\" from node " + theirId );
 			return myMsg;
 		}
 		
@@ -198,14 +199,14 @@ public class NetworkNode {
 		NodeInfo node = nodes.get(theirId);
 		try {
 			msg = node.reader.readLine();
-			log.finest("Received message \"" + msg + "\" from node " + theirId );
+			log.debug("Received message \"" + msg + "\" from node " + theirId );
 			return Message.fromString(msg);
 		} catch (SocketException e){
-				log.finest("Lost connection to node " + theirId);
+				log.warn("Lost connection to node " + theirId);
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (IllegalArgumentException e){
-			log.finest("Failed to decode message \"" + msg + "\" from node " + theirId);
+			log.error("Failed to decode message \"" + msg + "\" from node " + theirId);
 		} 
 		
 		return null;
@@ -249,7 +250,7 @@ public class NetworkNode {
 	 * Send a message to another node
 	 */
 	private void sendMessage(NodeInfo node, Message msg) {
-		log.finest("Sending message \"" + msg + "\" to " + node );
+		log.trace("Sending message \"" + msg + "\" to " + node );
 		node.writer.println(msg.toString());
 		node.writer.flush();
 	}
@@ -261,12 +262,12 @@ public class NetworkNode {
 		String msg = null;
 		try {
 			msg = node.reader.readLine();
-			log.finest("Received message \"" + msg + "\" from " + node );
+			log.trace("Received message \"" + msg + "\" from " + node );
 			return Message.fromString(msg);
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (IllegalArgumentException e){
-			log.finest("Failed to decode message \"" + msg + "\" from " + node);
+			log.error("Failed to decode message \"" + msg + "\" from " + node);
 		}
 		
 		return null;
@@ -297,7 +298,7 @@ public class NetworkNode {
 				reader = new BufferedReader(new InputStreamReader(sock.getInputStream()));
 				connected = true;
 			} catch(IOException e){
-				log.warning("IOException from node " + this);
+				log.warn("IOException from node " + this);
 				connected = false;
 			}
 		}
@@ -350,7 +351,7 @@ public class NetworkNode {
 	 */
 	private void connectionLoop(){
 		while(true){
-			log.finer("Listenining for connection on port "+ (getPort()));
+			log.debug("Listenining for connection on port "+ (getPort()));
 			try {
 				// set up connection from unknown server
 				Socket sock = serverSocket.accept();
@@ -367,7 +368,7 @@ public class NetworkNode {
 	 */
 	private void initIncomingConnection(Socket sock) throws IOException{
 		NodeInfo node = new NodeInfo(sock);
-		log.finer("Initializing incoming connection with node at " + node);
+		log.debug("Initializing incoming connection with node at " + node);
 		
 		// find out what id they are
 		
@@ -377,13 +378,13 @@ public class NetworkNode {
 			node.connected = true;
 			
 			if(msg.getType() != MessageType.INIT){
-				log.warning("Received non INIT message from " + node);
+				log.warn("Received non INIT message from " + node);
 				node.connected = false;
 			}
 			theirId = msg.getId();
 			
 			if(theirId < 0 || theirId >= nodes.size()){
-				log.warning("Received out-of-bounds id from " + node);
+				log.warn("Received out-of-bounds id from " + node);
 				node.connected = false;
 			}
 			
@@ -391,13 +392,13 @@ public class NetworkNode {
 				if(node.address.equals(nodes.get(theirId).address)){
 					log.info("Node " + theirId + " coming back online...");
 				} else {
-					log.warning("Received in-use id from " + node);
+					log.warn("Received in-use id from " + node);
 					node.connected = false;
 				}
 			}
 			
 		} catch(IllegalArgumentException e){
-			log.warning("Could not decode message from " + node);
+			log.error("Could not decode message from " + node);
 			node.connected = false;
 		}
 		
@@ -437,7 +438,7 @@ public class NetworkNode {
 				continue; // this socket and thread will be null
 
 			try {
-				log.fine("Entering connect loop for iServer = " + iServer);
+				log.debug("Entering connect loop for iServer = " + iServer);
 				Socket sock = new Socket();
 				try{
 					if(node.connectionAttempts>0)
@@ -445,7 +446,7 @@ public class NetworkNode {
 					sock.connect(new InetSocketAddress(node.address, ports.get(iServer)), TIMEOUT);
 					initOutgoingConnection(sock, iServer);
 				} catch (ConnectException | InterruptedException e) {
-					log.finer("NetworkNode connection failed to node "+iServer + ". So far " 
+					log.warn("NetworkNode connection failed to node "+iServer + ". So far " 
 							+ node.connectionAttempts + " attempts.");
 					node.connectionAttempts++;
 					continue;
@@ -455,7 +456,7 @@ public class NetworkNode {
 				e.printStackTrace();
 			}
 		}
-		log.fine("Finished in ctor connection loop");
+		log.debug("Finished in ctor connection loop");
 	}
 
 	
@@ -464,7 +465,7 @@ public class NetworkNode {
 	 */
 	private void initOutgoingConnection(Socket sock, int iServer) throws IOException{
 		NodeInfo node = new NodeInfo(sock);
-		log.finer("Initializing outgoing connection with node at " + node);
+		log.debug("Initializing outgoing connection with node at " + node);
 		
 		// send init message identifying myself
 		Message msg = new Message(MessageType.INIT, "id", id, id);
@@ -478,7 +479,7 @@ public class NetworkNode {
 
 
 	public void clearnode(int otherID) {
-		log.fine("Clearing node " + otherID);
+		log.debug("Clearing node " + otherID);
 		nodes.get(otherID).connected = false;
 		nodes.get(otherID).writer = null;
 		nodes.get(otherID).reader = null;

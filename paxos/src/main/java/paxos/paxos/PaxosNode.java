@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Logger;
+
+import org.apache.logging.log4j.Logger;
 
 import paxos.NodeFileParser;
 import paxos.application.AbstractApp;
@@ -80,7 +81,7 @@ public class PaxosNode{
 
 	
 	public void processMessage(Message msg) {
-		log.finest("Processing message " + msg);
+		log.debug("Processing message " + msg);
 		
 		switch(msg.getType()){
 		case ACCEPT_REQUEST:
@@ -123,7 +124,7 @@ public class PaxosNode{
 		state.lastProposalNumber = (state.lastProposalNumber == -1) ? id : state.lastProposalNumber+Nprocs;
 		
 		// update state and write to file
-		log.finest("Updated lastProposalNumber: writing state to file");
+		log.debug("Updated lastProposalNumber: writing state to file");
 		state.writeToFile();
 		
 		// get acceptor set
@@ -137,7 +138,7 @@ public class PaxosNode{
 		}
 		
 		long t2 = System.currentTimeMillis();
-		log.finest("Elapsed time = " + (t2-t1));
+		log.trace("Elapsed time = " + (t2-t1));
 	}
 	
 	
@@ -176,13 +177,13 @@ public class PaxosNode{
 		}
 		
 		long t2 = System.currentTimeMillis();
-		log.finest("Elapsed time = " + (t2-t1));
+		log.trace("Elapsed time = " + (t2-t1));
 	}
 	
 	
 	public synchronized void receivePrepareResponse(Message msg){
 		long t1 = System.currentTimeMillis();
-		log.fine("Received PREPARE_RESPONSE from " + msg.getId());
+		log.debug("Received PREPARE_RESPONSE from " + msg.getId());
 		
 		// contents of PREPARE_RESPONSE (the promise)
 		// msg.number == YOUR request number
@@ -190,20 +191,20 @@ public class PaxosNode{
 		
 		// if outdated response, ignore
 		if(msg.getNumber() != state.lastProposalNumber){
-			log.fine("Outdated response, ignoring");
+			log.debug("Outdated response, ignoring");
 			return;
 		}
 
 		Proposal responseProposal = Proposal.fromString(msg.getValue());
 
 		if(responseProposal==null){
-			log.fine("Received promise from " + msg.getId());
+			log.debug("Received promise from " + msg.getId());
 		} else {
 			if( state.receivedProposal==null || state.receivedProposal.number < responseProposal.number ){
-				log.fine("Received promise with more recent proposal, updating values...");
+				log.debug("Received promise with more recent proposal, updating values...");
 				state.receivedProposal = responseProposal;
 			} else {
-				log.fine("Received promise with outdated proposal, not updating values...");
+				log.debug("Received promise with outdated proposal, not updating values...");
 			}
 		}
 		
@@ -211,19 +212,19 @@ public class PaxosNode{
 		state.prepareResponseSum += acceptorWeights[msg.getId()];
 		
 		// update state and write to file
-		log.finest("Updated prepareResponseSum and receivedProposal: writing state to file");
+		log.debug("Updated prepareResponseSum and receivedProposal: writing state to file");
 		state.writeToFile();
 		
 		// If a majority (>0.5) is obtained, send accept request
 		if(state.prepareResponseSum > 0.5){
-			log.fine("Prepare response sum = " + state.prepareResponseSum + ", sending accept request");
+			log.debug("Prepare response sum = " + state.prepareResponseSum + ", sending accept request");
 			sendAcceptRequest();
 		} else {
-			log.fine("Prepare response sum = " + state.prepareResponseSum);
+			log.debug("Prepare response sum = " + state.prepareResponseSum);
 		}
 		
 		long t2 = System.currentTimeMillis();
-		log.finest("Elapsed time = " + (t2-t1));
+		log.trace("Elapsed time = " + (t2-t1));
 		
 	}	
 	
@@ -231,14 +232,14 @@ public class PaxosNode{
 	// NACKs contain the newer proposal information that must be recorded
 	public synchronized void receiveNack(Message msg){
 		long t1 = System.currentTimeMillis();
-		log.fine("Received NACK");
+		log.debug("Received NACK");
 		Proposal responseProposal = Proposal.fromString(msg.getValue());
 		if(responseProposal != null){
 			if( state.receivedProposal==null || state.receivedProposal.number < responseProposal.number ){
-				log.fine("Received NACK with more recent proposal, updating values...");
+				log.debug("Received NACK with more recent proposal, updating values...");
 				state.receivedProposal = responseProposal;
 			} else {
-				log.fine("Received NACK with outdated proposal, not updating values...");
+				log.debug("Received NACK with outdated proposal, not updating values...");
 			}
 		}
 
@@ -246,36 +247,36 @@ public class PaxosNode{
 		state.nackSum += acceptorWeights[msg.getId()];
 		
 		// update state and write to file
-		log.finest("Updated nackSum: writing state to file");
+		log.debug("Updated nackSum: writing state to file");
 		state.writeToFile();
 		
 		if(state.nackSum > 0.5){
-			log.fine("NACK sum = " + state.nackSum + ", starting new prepare request");
+			log.debug("NACK sum = " + state.nackSum + ", starting new prepare request");
 			sendPrepareRequest();
 		}
 		
 		long t2 = System.currentTimeMillis();
-		log.finest("Elapsed time = " + (t2-t1));
+		log.trace("Elapsed time = " + (t2-t1));
 	}
 	
 	
 	// if found that our round is out of date, 
 	public synchronized void receiveNackOldRound(Message msg){
 		long t1 = System.currentTimeMillis();
-		log.fine("Received NACK_OLDROUND");
+		log.debug("Received NACK_OLDROUND");
 		int theirRound = Integer.parseInt(msg.getValue());
 		
 		if( state.currentRound < theirRound ){
-			log.finest("Updating currentRound");
+			log.debug("Updating currentRound");
 			state.currentRound = theirRound;
 			state.writeToFile();
 			sendPrepareRequest();
 		} else {
-			log.fine("Received old round " + theirRound);
+			log.debug("Received old round " + theirRound);
 		}
 		
 		long t2 = System.currentTimeMillis();
-		log.finest("Elapsed time = " + (t2-t1));
+		log.trace("Elapsed time = " + (t2-t1));
 	}
 	
 	
@@ -293,7 +294,7 @@ public class PaxosNode{
 		String propString = (state.acceptedProposal == null) ? "" : state.acceptedProposal.toString();
 		
 		if( round < state.currentRound ){
-			log.fine("Received PREPARE for round " + round + " but I am expecting at least round " + state.currentRound);
+			log.debug("Received PREPARE for round " + round + " but I am expecting at least round " + state.currentRound);
 			Message nackMsg = new Message(MessageType.NACK_OLDROUND, ""+(state.currentRound), n, id);
 			sendNack(nackMsg, msg.getId());
 		// if promising
@@ -301,7 +302,7 @@ public class PaxosNode{
 			state.promiseNumber = n;
 			
 			// update state and write to file
-			log.finest("Updared promiseNumber: writing state to file");
+			log.debug("Updared promiseNumber: writing state to file");
 			state.writeToFile();
 			
 			Message promiseMsg = new Message(MessageType.PREPARE_RESPONSE, propString, n, id);
@@ -313,7 +314,7 @@ public class PaxosNode{
 		
 		
 		long t2 = System.currentTimeMillis();
-		log.finest("Elapsed time = " + (t2-t1));
+		log.trace("Elapsed time = " + (t2-t1));
 	}
 	
 	public synchronized void receiveAcceptRequest(Message msg){
@@ -323,20 +324,20 @@ public class PaxosNode{
 		Proposal prop = Proposal.fromString(msg.getValue());
 		
 		if( prop.round < state.currentRound ){
-			log.fine("Received ACCEPT_REQUEST for round " + prop.round + " but I am expecting at least round " + state.currentRound);
+			log.debug("Received ACCEPT_REQUEST for round " + prop.round + " but I am expecting at least round " + state.currentRound);
 			Message nackMsg = new Message(MessageType.NACK_OLDROUND, ""+(state.currentRound), msg.getNumber(), id);
 			sendNack(nackMsg, msg.getId());
 		} else if(prop.number >= state.promiseNumber){
-			log.fine("Accepted new proposal from node " + msg.getId() + ": " + prop);
+			log.debug("Accepted new proposal from node " + msg.getId() + ": " + prop);
 			state.acceptedProposal = prop;
 			
 			// update state and write to file
-			log.finest("Updated acceptedProposal: writing state to file");
+			log.debug("Updated acceptedProposal: writing state to file");
 			state.writeToFile();
 			
 			sendAcceptNotification();
 		} else {
-			log.fine("Ignoring new proposal: " + prop);
+			log.debug("Ignoring new proposal: " + prop);
 			// otherwise send NACK
 			String propString = (state.acceptedProposal == null) ? "" : state.acceptedProposal.toString();
 			Message nackMsg = new Message(MessageType.NACK, propString, state.promiseNumber, id);
@@ -345,7 +346,7 @@ public class PaxosNode{
 		
 
 		long t2 = System.currentTimeMillis();
-		log.finest("Elapsed time = " + (t2-t1));
+		log.trace("Elapsed time = " + (t2-t1));
 	}
 	
 	
@@ -355,7 +356,7 @@ public class PaxosNode{
 		app.sendMessage(otherId, msg);
 		
 		long t2 = System.currentTimeMillis();
-		log.finest("Elapsed time = " + (t2-t1));
+		log.trace("Elapsed time = " + (t2-t1));
 	}
 	
 	
@@ -365,7 +366,7 @@ public class PaxosNode{
 		app.sendMessage(otherId, msg);
 		
 		long t2 = System.currentTimeMillis();
-		log.finest("Elapsed time = " + (t2-t1));
+		log.trace("Elapsed time = " + (t2-t1));
 	}
 	
 	
@@ -374,13 +375,13 @@ public class PaxosNode{
 		long t1 = System.currentTimeMillis();
 		
 		Message msg = new Message(MessageType.ACCEPT_NOTIFICATION, state.acceptedProposal.toString(), state.acceptedProposal.number, id);
-		log.fine("Preparing to send out " + msg + " to DLs");
+		log.debug("Preparing to send out " + msg + " to DLs");
 		for(Integer learnerID : distinguishedLearners){
 			app.sendMessage(learnerID, msg);
 		}
 		
 		long t2 = System.currentTimeMillis();
-		log.finest("Elapsed time = " + (t2-t1));
+		log.trace("Elapsed time = " + (t2-t1));
 	}
 	
 	
@@ -404,10 +405,10 @@ public class PaxosNode{
 		
 		// store proposal in acceptedProposals
 		state.acceptedProposals[accId] = prop;
-		log.fine("Received new accepted proposal from node " + accId);
+		log.debug("Received new accepted proposal from node " + accId);
 		
 		// update state and write to file
-		log.finest("Updated acceptedProposals: writing state to file");
+		log.debug("Updated acceptedProposals: writing state to file");
 		state.writeToFile();
 		
 		
@@ -417,20 +418,20 @@ public class PaxosNode{
 			String chosenVal = checkForChosenValue();
 			
 			if(chosenVal != null){
-				log.fine("Chosen value (" + accId + ") = " + chosenVal);
+				log.debug("Chosen value (" + accId + ") = " + chosenVal);
 				log.info("Determined new chosen value " + chosenVal + " for round " + state.currentRound);
 				updateChosenValue(state.currentRound, chosenVal);
 				sendChosenValue();
 				// increment round number
 				state.currentRound++;
 				state.receivedProposal = null;
-				log.finest("Updated round to " + state.currentRound + " : writing state to file");
+				log.debug("Updated round to " + state.currentRound + " : writing state to file");
 				state.writeToFile();
 			}
 		}
 		
 		long t2 = System.currentTimeMillis();
-		log.finest("Elapsed time = " + (t2-t1));
+		log.trace("Elapsed time = " + (t2-t1));
 	}	
 	
 	
@@ -458,14 +459,14 @@ public class PaxosNode{
 	private void sendChosenValue(){
 		long t1 = System.currentTimeMillis();
 		
-		log.fine("Sending chosen value for round " + state.currentRound + " " + state.chosenValues + " to all");
+		log.debug("Sending chosen value for round " + state.currentRound + " " + state.chosenValues + " to all");
 		Message msg = new Message(MessageType.CHOSEN_VALUE, state.chosenValues.get(state.currentRound), state.currentRound, id);
 		for(int i=0; i<Nprocs; i++){
 			app.sendMessage(i, msg);
 		}
 		
 		long t2 = System.currentTimeMillis();
-		log.finest("Elapsed time = " + (t2-t1));
+		log.trace("Elapsed time = " + (t2-t1));
 	}
 	
 	
@@ -478,13 +479,13 @@ public class PaxosNode{
 			updateChosenValue(theirRound, msg.getValue());
 		} else {
 			if(state.chosenValues.get(theirRound).equals(msg.getValue()))
-				log.fine("Chosen value confirmed from node " + msg.getId() + " for round " + theirRound + " : " + msg.getValue());
+				log.debug("Chosen value confirmed from node " + msg.getId() + " for round " + theirRound + " : " + msg.getValue());
 			else
-				log.warning("PROBLEM! CONFLICTING CHOSEN VALUE FROM " + msg.getId() + " for round " + theirRound + " : " + msg.getValue() + ". Current chosen value = " + state.chosenValues.get(theirRound));
+				log.warn("PROBLEM! CONFLICTING CHOSEN VALUE FROM " + msg.getId() + " for round " + theirRound + " : " + msg.getValue() + ". Current chosen value = " + state.chosenValues.get(theirRound));
 		}
 		
 		long t2 = System.currentTimeMillis();
-		log.finest("Elapsed time = " + (t2-t1));
+		log.trace("Elapsed time = " + (t2-t1));
 	}
 	
 	
@@ -525,7 +526,7 @@ public class PaxosNode{
 			learnerInit();
 		
 		// update state and write to file
-		log.finest("Reset state: writing state to file");
+		log.debug("Reset state: writing state to file");
 		state.writeToFile();
 	}
 
