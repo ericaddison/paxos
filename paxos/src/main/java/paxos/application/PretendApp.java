@@ -99,7 +99,6 @@ public class PretendApp extends AbstractApp{
 			System.exit(2);
 		}
 
-
 		AbstractApp app = new PretendApp(id, fileName, statefile);
 		app.run();
 	}

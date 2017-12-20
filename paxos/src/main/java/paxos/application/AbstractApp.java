@@ -1,7 +1,9 @@
 package paxos.application;
 
 import org.apache.logging.log4j.Logger;
+
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.LoggerContext;
 
 import paxos.messages.Message;
 import paxos.network.NetworkNode;
@@ -9,7 +11,7 @@ import paxos.paxos.PaxosNode;
 
 abstract public class AbstractApp {
 
-	private final Logger log = LogManager.getLogger(this.getClass().getCanonicalName());
+	static Logger log;
 	
 	private NetworkNode netnode;
 	private PaxosNode paxnode;
@@ -18,6 +20,13 @@ abstract public class AbstractApp {
 	
 	public AbstractApp(int id, String nodeListFileName, String statefile) {
 		this.id = id;
+		
+		// configure log filename
+		System.setProperty("logFilename", "logs/node_" + id + ".log");
+		LoggerContext ctx = (LoggerContext) LogManager.getContext(false);
+		ctx.reconfigure();
+		
+		log = LogManager.getLogger(this.getClass().getCanonicalName());
 		
 		log.info("Created new " + this.getClass().getSimpleName() + " with:");
 		log.info("\tid = " + id);
